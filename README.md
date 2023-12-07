@@ -1,8 +1,27 @@
-# React + Vite
+# react-social-media-app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SocialMediaApp is a modern and responsive social media application built with React.js. Connect with friends, share updates, and explore a dynamic social experience with this feature-rich frontend application.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication**: Secure user authentication powered by Firebase Authentication.
+- **News Feed**: Scroll through a personalized news feed to stay updated on your friends' activities.
+- **Post Creation**: Create and share posts with text, images, and more.
+- **Comments and Likes**: Engage with friends' posts through comments and likes.
+- **Real-time Updates**: Experience real-time updates with the help of Firebase Realtime Database.
+- **Responsive Design**: Enjoy a seamless experience across various devices with a responsive design.
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) installed on your machine.
+- An active Firebase project for authentication and real-time database.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/SocialMediaApp.git
+   ```
