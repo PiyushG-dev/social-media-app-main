@@ -5,7 +5,6 @@
     left: 0;
     bottom: 0;
     background-color: #596d7858;
-    display: flex;
     justify-content: center;
     padding-top: 2rem;
 }
@@ -27,6 +26,7 @@
 .close{
     color: #ffffff;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .close_container p{

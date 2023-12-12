@@ -13,12 +13,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import prof from "../../images/postpf.jpeg";
 
-const CreatePost = () => {
+const CreatePost = ({ createPost, setCreatePost }) => {
   return (
-    <section className={styles.wrapper}>
+    <section
+      style={{ display: !createPost ? "none" : "flex" }}
+      className={styles.wrapper}
+    >
       <div className={styles.container}>
         <div className={styles.close_container}>
-          <FontAwesomeIcon className={styles.close} icon={faClose} />
+          <FontAwesomeIcon
+            onClick={() => setCreatePost(!createPost)}
+            className={styles.close}
+            icon={faClose}
+          />
           <p>Drafts</p>
         </div>
         <div className={styles.tweet_content_container}>

@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ createPost, setCreatePost }) => {
   return (
     <div className={styles.container}>
       <div className={styles.logo_container}>
@@ -37,7 +37,12 @@ const Navbar = () => {
         <FontAwesomeIcon icon={faUser} />
         <p>Profile</p>
       </Link>
-      <button className={styles.post_btn}>Post</button>
+      <button
+        onClick={() => setCreatePost(!createPost)}
+        className={styles.post_btn}
+      >
+        Post
+      </button>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -11,11 +11,13 @@ import Trending from "./components/trending/Trending";
 import CreatePost from "./components/createPost/CreatePost";
 
 const App = () => {
+  const [createPost, setCreatePost] = useState(false);
+
   return (
     <div className="App">
       <BrowserRouter>
         <div className="layout">
-          <Navbar />
+          <Navbar createPost={createPost} setCreatePost={setCreatePost} />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/explore" element={<Explore />} />
@@ -24,7 +26,7 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
           </Routes>
           <Trending />
-          <CreatePost />
+          <CreatePost createPost={createPost} setCreatePost={setCreatePost} />
         </div>
       </BrowserRouter>
     </div>
