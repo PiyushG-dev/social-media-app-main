@@ -7,6 +7,7 @@ import Explore from "./pages/Explore";
 import Notifications from "./pages/Notifications";
 import Premium from "./pages/Premium";
 import Profile from "./pages/Profile";
+import Trending from "./components/trending/Trending";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/premium" element={<Premium />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
+          <Trending />
         </div>
       </BrowserRouter>
     </div>

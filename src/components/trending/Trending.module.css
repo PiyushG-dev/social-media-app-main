@@ -1,0 +1,9 @@
+.container{
+    width: 32%;
+    background: #000000;
+    border-left: 1px solid #4c4c4cae;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+}

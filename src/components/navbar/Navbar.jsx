@@ -1,26 +1,41 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 import logo from "../../assets/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Logo from "../../assets/logo.png";
+import {
+  faHomeAlt,
+  faSearch,
+  faBell,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className={styles.container}>
-      <img className={styles.logo} src={logo} alt="logo" />
+      <div className={styles.logo_container}>
+        <img className={styles.logo} src={logo} alt="logo" />
+      </div>
       <Link className={styles.link} to="/">
-        Home
+        <FontAwesomeIcon icon={faHomeAlt} />
+        <p>Home</p>
       </Link>
       <Link className={styles.link} to="/explore">
-        Explore
+        <FontAwesomeIcon icon={faSearch} />
+        <p>Explore</p>
       </Link>
       <Link className={styles.link} to="/Notifications">
-        Notifications
+        <FontAwesomeIcon icon={faBell} />
+        <p>Notifications</p>
       </Link>
       <Link className={styles.link} to="/Premium">
-        Premium
+        <img src={Logo} alt="premium" />
+        <p>Premium</p>
       </Link>
       <Link className={styles.link} to="/Profile">
-        Profile
+        <FontAwesomeIcon icon={faUser} />
+        <p>Profile</p>
       </Link>
       <button className={styles.post_btn}>Post</button>
     </div>
