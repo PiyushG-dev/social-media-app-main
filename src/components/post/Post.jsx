@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./Post.module.css";
-import prof from "../../images/postpf.jpeg";
-import post from "../../images/post.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEllipsis,
@@ -13,28 +11,26 @@ import {
   faArrowUpFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Post = () => {
+const Post = ({ name, profile, username, time, image, desc }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.profile}>
-          <img src={prof} alt="profile" />
+          <img src={profile} alt="profile" />
         </div>
         <div className={styles.content}>
           <div className={styles.post_details}>
             <div className={styles.left}>
-              <p>Piers Morgan</p>
-              <p>@PiersMorgan</p>
-              <p> &middot; 5h</p>
+              <p>{name}</p>
+              <p>@{username}</p>
+              <p> &middot; {time}</p>
             </div>
             <div className={styles.right}>
               <FontAwesomeIcon className={styles.post_menu} icon={faEllipsis} />
             </div>
           </div>
-          <p className={styles.post_description}>
-            Cristiano Ronaldo has just scored his 50th goal of 2023.
-          </p>
-          <img src={post} alt="post_img" />
+          <p className={styles.post_description}>{desc}</p>
+          <img src={image} alt="post_img" />
           <div className={styles.features}>
             <div className={styles.features_left}>
               <FontAwesomeIcon className={styles.reply} icon={faReply} />
