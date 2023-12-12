@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Post.module.css";
-import profile from "../../images/postpf.jpeg";
+import prof from "../../images/postpf.jpeg";
 import post from "../../images/post.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,7 +18,7 @@ const Post = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.profile}>
-          <img src={profile} alt="profile" />
+          <img src={prof} alt="profile" />
         </div>
         <div className={styles.content}>
           <div className={styles.post_details}>
@@ -37,14 +37,17 @@ const Post = () => {
           <img src={post} alt="post_img" />
           <div className={styles.features}>
             <div className={styles.features_left}>
-              <FontAwesomeIcon icon={faReply} />
-              <FontAwesomeIcon icon={faRetweet} />
-              <FontAwesomeIcon icon={faHeart} />
-              <FontAwesomeIcon icon={faSignal} />
+              <FontAwesomeIcon className={styles.reply} icon={faReply} />
+              <FontAwesomeIcon className={styles.retweet} icon={faRetweet} />
+              <FontAwesomeIcon className={styles.like} icon={faHeart} />
+              <FontAwesomeIcon className={styles.views} icon={faSignal} />
             </div>
             <div className={styles.features_right}>
-              <FontAwesomeIcon icon={faBookmark} />
-              <FontAwesomeIcon icon={faArrowUpFromBracket} />
+              <FontAwesomeIcon className={styles.bookmark} icon={faBookmark} />
+              <FontAwesomeIcon
+                className={styles.share}
+                icon={faArrowUpFromBracket}
+              />
             </div>
           </div>
         </div>

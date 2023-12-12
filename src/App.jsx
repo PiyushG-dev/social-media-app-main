@@ -8,6 +8,7 @@ import Notifications from "./pages/Notifications";
 import Premium from "./pages/Premium";
 import Profile from "./pages/Profile";
 import Trending from "./components/trending/Trending";
+import CreatePost from "./components/createPost/CreatePost";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
           </Routes>
           <Trending />
+          <CreatePost />
         </div>
       </BrowserRouter>
     </div>

@@ -67,15 +67,95 @@
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
-    margin-top: .5vmax;
 }
 
 .features_left{
     display: flex;
-    gap: 5vmax;
+    gap: 5vw;
 }
 
 .features_right{
     display: flex;
-    gap: 2vmax;
+    gap: 2vw;
+}
+
+.reply{
+    border-radius: 1rem;
+    padding: .5rem .5rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.reply:hover{
+    color: #1da1f2;
+    background-color: #1da0f225;
+   
+}
+.retweet{
+    border-radius: 1rem;
+    padding: .5rem .5rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+}
+
+.retweet:hover{
+    color: #4dba58;
+    background-color: #4dba5823;
+
+}
+.like{
+    border-radius: 1rem;
+    padding: .5rem .5rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.like:hover{
+    color: #f21d88;
+    background-color: #f21d8828;
+}
+.views{
+    border-radius: 1rem;
+    padding: .5rem .5rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.views:hover{
+    color: #1da1f2;
+    background-color: #1da0f225;
+}
+.bookmark{
+    border-radius: 1rem;
+    padding: .5rem .5rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.bookmark:hover{
+    color: #1da1f2;
+    background-color: #1da0f225;
+}
+.share{
+    border-radius: 1rem;
+    padding: .5rem .5rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.share:hover{
+    color: #1da1f2;
+    background-color: #1da0f225;
+}
+.post_menu{
+    border-radius: 1rem;
+    padding: .5rem .5rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.post_menu:hover{
+    color: #1da1f2;
+    background-color: #1da0f225;
 }
