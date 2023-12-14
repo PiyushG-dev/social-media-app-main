@@ -1,46 +1,11 @@
-.wrapper{
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #596d7858;
+.container{ 
+    display: flex;
     justify-content: center;
-    padding-top: 2rem;
-}
-
-.container{
-    background: #000000;
-    width: 38rem;
-    height: 18rem;
-    border-radius: 1.5rem;
-    padding: 1rem 2rem 1rem 1rem;
-}
-
-.close_container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.close{
-    color: #ffffff;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.close_container p{
-    color: #1da1f2;
-}
-
-.tweet_content_container{
-    display: flex;
-    align-items: flex-start;
     gap: 1rem;
-    margin-top: 2rem;
+    padding: 1rem 0rem;
 }
 
-.profile_img{
+.profile_container img{
     width: 3rem;
     border-radius: 1.5rem;
 }
@@ -64,7 +29,6 @@
     color: #1da1f2;
     font-size: .9rem;
     font-weight: 700;
-    margin-left: .5rem;
     cursor: pointer;
 }
 
@@ -81,7 +45,7 @@
     display: flex;
     gap: 1.5rem;
     margin-top: .8rem;
-    margin-left: 1rem;
+    font-size: 0.9rem;
 }
 
 .post_button{

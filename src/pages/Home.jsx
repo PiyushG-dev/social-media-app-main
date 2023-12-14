@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./css/Home.module.css";
 import Post from "../components/post/Post";
 import posts from "../data/Posts";
+import CreateHomePost from "../components/createHomePost/CreateHomePost";
 
 const Home = () => {
   return (
     <div className={styles.container}>
+      <CreateHomePost />
       {posts.map((post) => {
         return (
           <Post
