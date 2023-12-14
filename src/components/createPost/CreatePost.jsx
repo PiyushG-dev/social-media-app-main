@@ -38,7 +38,13 @@ const CreatePost = ({ createPost, setCreatePost }) => {
         </div>
         <div className={styles.features_container}>
           <div className={styles.features}>
-            <FontAwesomeIcon icon={faPhotoFilm} />
+            <label>
+              <FontAwesomeIcon
+                style={{ cursor: "pointer" }}
+                icon={faPhotoFilm}
+              />
+              <input type="file" accept="image/*" style={{ display: "none" }} />
+            </label>
             <FontAwesomeIcon icon={faSquareCheck} />
             <FontAwesomeIcon icon={faList} />
             <FontAwesomeIcon icon={faSmile} />
