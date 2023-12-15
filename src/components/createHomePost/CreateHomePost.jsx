@@ -34,10 +34,10 @@ const CreateHomePost = ({ addPost }) => {
   };
 
   const handlePost = () => {
-    if (postText && selectedImage) {
+    if ((postText && selectedImage) || postText) {
       addPost(postText, selectedImage);
     } else {
-      alert("description or image missing");
+      alert("description missing");
     }
 
     setPostText("");

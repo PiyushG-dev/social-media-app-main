@@ -4,7 +4,6 @@ import Post from "../components/post/Post";
 import postsdummy from "../data/Posts";
 import CreateHomePost from "../components/createHomePost/CreateHomePost";
 import pf2 from "../images/pf2.jpg";
-import post2 from "../images/post2.png";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -17,7 +16,9 @@ const Home = () => {
         profilePicture: pf2,
         username: "DennisSnellberg",
         time: "5h",
-        uploadedImage: URL.createObjectURL(selectedImage),
+        uploadedImage: selectedImage
+          ? URL.createObjectURL(selectedImage)
+          : null,
         desc: desc,
       },
     ]);

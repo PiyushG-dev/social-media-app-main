@@ -30,7 +30,11 @@ const Post = ({ name, profile, username, time, image, desc }) => {
             </div>
           </div>
           <p className={styles.post_description}>{desc}</p>
-          <img src={image} alt="post_img" />
+          <img
+            style={{ display: image ? "block" : "none" }}
+            src={image}
+            alt="post_img"
+          />
           <div className={styles.features}>
             <div className={styles.features_left}>
               <FontAwesomeIcon className={styles.reply} icon={faReply} />
