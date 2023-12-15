@@ -11,7 +11,7 @@ import {
   faCalendarAlt,
   faLocationArrow,
 } from "@fortawesome/free-solid-svg-icons";
-import prof from "../../images/pf1.jpeg";
+import prof from "../../images/pf2.jpg";
 
 const CreatePost = ({ createPost, setCreatePost }) => {
   return (

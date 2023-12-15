@@ -3,15 +3,13 @@ import styles from "./css/Home.module.css";
 import Post from "../components/post/Post";
 import postsdummy from "../data/Posts";
 import CreateHomePost from "../components/createHomePost/CreateHomePost";
-import pf1 from "../images/pf1.jpeg";
-import post1 from "../images/post1.webp";
 import pf2 from "../images/pf2.jpg";
 import post2 from "../images/post2.png";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
 
-  const addPost = (desc) => {
+  const addPost = (desc, selectedImage) => {
     setPosts([
       ...posts,
       {
@@ -19,7 +17,7 @@ const Home = () => {
         profilePicture: pf2,
         username: "DennisSnellberg",
         time: "5h",
-        uploadedImage: post2,
+        uploadedImage: URL.createObjectURL(selectedImage),
         desc: desc,
       },
     ]);

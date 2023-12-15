@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./CreateHomePost.module.css";
-import prof from "../../images/pf1.jpeg";
+import prof from "../../images/pf2.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEarth,
@@ -14,6 +14,35 @@ import {
 
 const CreateHomePost = ({ addPost }) => {
   const [postText, setPostText] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedImage(file);
+
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      const imageDataUrl = reader.result;
+      console.log(imageDataUrl);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+      console.log(file);
+    }
+  };
+
+  const handlePost = () => {
+    if (postText && selectedImage) {
+      addPost(postText, selectedImage);
+    } else {
+      alert("description or image missing");
+    }
+
+    setPostText("");
+    setSelectedImage(null);
+  };
 
   return (
     <div className={styles.container}>
@@ -39,7 +68,12 @@ const CreateHomePost = ({ addPost }) => {
                 style={{ cursor: "pointer" }}
                 icon={faPhotoFilm}
               />
-              <input type="file" accept="image/*" style={{ display: "none" }} />
+              <input
+                type="file"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={handleImageChange}
+              />
             </label>
             <FontAwesomeIcon icon={faSquareCheck} />
             <FontAwesomeIcon icon={faList} />
@@ -47,10 +81,7 @@ const CreateHomePost = ({ addPost }) => {
             <FontAwesomeIcon icon={faCalendarAlt} />
             <FontAwesomeIcon icon={faLocationArrow} />
           </div>
-          <button
-            onClick={() => addPost(postText)}
-            className={styles.post_button}
-          >
+          <button onClick={handlePost} className={styles.post_button}>
             Post
           </button>
         </div>
