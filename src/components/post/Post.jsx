@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Post.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,6 +12,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Post = ({ name, profile, username, time, image, desc }) => {
+  const [like, setLike] = useState(false);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -39,7 +41,12 @@ const Post = ({ name, profile, username, time, image, desc }) => {
             <div className={styles.features_left}>
               <FontAwesomeIcon className={styles.reply} icon={faReply} />
               <FontAwesomeIcon className={styles.retweet} icon={faRetweet} />
-              <FontAwesomeIcon className={styles.like} icon={faHeart} />
+              <FontAwesomeIcon
+                onClick={() => setLike(!like)}
+                style={{ color: like ? "#f21d88" : "#7c7c7c" }}
+                className={styles.like}
+                icon={faHeart}
+              />
               <FontAwesomeIcon className={styles.views} icon={faSignal} />
             </div>
             <div className={styles.features_right}>
