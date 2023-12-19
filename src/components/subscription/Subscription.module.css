@@ -1,0 +1,30 @@
+.container{
+    color: #ffffff;
+    width: 22rem;
+    padding: 1rem 3rem 1rem 1rem;
+    background-color: #747a983b;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+} 
+
+.container h2{
+    font-size: 1.4rem;
+}
+
+.container p{
+    font-size: .9rem;
+    font-weight: 300;
+}
+
+.container button{
+    width: fit-content;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #1da1f2;
+    color: #ffffff;
+}
