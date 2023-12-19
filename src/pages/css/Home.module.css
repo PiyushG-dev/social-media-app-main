@@ -1,7 +1,14 @@
 .container{
-    width: 43%;
+    width: 34%;
     background: #000000;
     position: absolute;
-    left: 25%;
+    left: 33%;
     height: fit-content;
+}
+
+@media(max-width: 1440px){
+    .container{
+        width: 43%;
+        left: 25%;
+    }
 }

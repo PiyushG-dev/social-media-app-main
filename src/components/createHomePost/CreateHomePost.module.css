@@ -1,8 +1,7 @@
 .container{ 
     display: flex;
-    justify-content: center;
     gap: 1rem;
-    padding: 1rem 0rem;
+    padding: 1vmax 1vmax;
 }
 
 .profile_container img{
