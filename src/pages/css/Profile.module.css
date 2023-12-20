@@ -1,0 +1,16 @@
+.container{
+    width: 34%;
+    background: #000000;
+    position: absolute;
+    left: 33%;
+    height: 100vh;
+}
+
+
+
+@media(max-width: 1440px){
+    .container{
+        width: 43%;
+        left: 25%;
+    }
+}
