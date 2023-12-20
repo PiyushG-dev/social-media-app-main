@@ -13,6 +13,8 @@ import CreatePost from "./components/createPost/CreatePost";
 const App = () => {
   const [createPost, setCreatePost] = useState(false);
 
+  console.log(import.meta.env.VITE_APPWRITE_URL);
+
   return (
     <div className="App">
       <BrowserRouter>
