@@ -6,6 +6,129 @@
     height: 100vh;
 }
 
+.account_details_container{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: .5rem 1rem;
+}
+.back{
+    color: #ffffff;
+}
+
+.account_details h3{
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.account_details p{
+    color: #ffffff;
+    color: #7c7c7c;
+    font-size: .9rem;
+}
+
+.images_container{
+    width: 100%;
+    position: relative;
+}
+
+.cover{
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile_image_container{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    align-items: center;
+    width: 100%;
+    top: 9rem;
+    padding: 0rem 1rem;
+}
+.profile{
+    width: 9rem;
+    height: 9rem;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 4px solid #000000;
+}
+
+.profile_image_container button{
+    color: #ffffff;
+    background: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .5rem 1.2rem;
+    border-radius: 1.5rem;
+    border: 1px solid #ffffff6c;
+    margin-top: 3rem;
+}
+
+.username_container{
+    padding: 5rem 1rem 0rem 1rem;
+}
+
+.username_container h3{
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.username_container p{
+    color: #7c7c7c;
+    font-weight: 300;
+}
+
+.description_container {
+    padding: 1rem 1rem 0rem 1rem;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.other_details_container{
+    padding: 1rem 1rem 0rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #7c7c7c;
+    font-size: .9rem;
+}
+.location_container{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.personal_website_container{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.personal_website_container p{
+    color: #1da1f2;
+}
+.joining_date_container{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.follow_container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    border-bottom: 1px solid #4c4c4cae;
+}
+.follow_container p{
+    color: #7c7c7c;
+    font-size: .9rem;
+}
+.follow_container p span{
+    color: #fff;
+}
 
 
 @media(max-width: 1440px){

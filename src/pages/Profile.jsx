@@ -3,12 +3,12 @@ import styles from "./css/Profile.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
-  faLocation,
+  faLocationArrow,
   faLink,
   faCalendarAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import cover from "../images/cover.png";
-import profile from "../images/pf2.png";
+import cover from "../images/cover.jpeg";
+import profile from "../images/pf2.jpg";
 
 const Profile = () => {
   return (
@@ -21,9 +21,9 @@ const Profile = () => {
         </div>
       </div>
       <div className={styles.images_container}>
-        <img src={cover} alt="cover" />
+        <img className={styles.cover} src={cover} alt="cover" />
         <div className={styles.profile_image_container}>
-          <img src={profile} alt="profile" />
+          <img className={styles.profile} src={profile} alt="profile" />
           <button>Edit profile</button>
         </div>
       </div>
@@ -36,12 +36,12 @@ const Profile = () => {
       </div>
       <div className={styles.other_details_container}>
         <div className={styles.location_container}>
-          <FontAwesomeIcon icon={faLocation} className={styles.location} />
+          <FontAwesomeIcon icon={faLocationArrow} className={styles.location} />
           <p>Silicon Valley, United States</p>
         </div>
         <div className={styles.personal_website_container}>
           <FontAwesomeIcon icon={faLink} className={styles.link} />
-          <p>github.com/dennissnellberg</p>
+          <p>dennissnellberg.com</p>
         </div>
         <div className={styles.joining_date_container}>
           <FontAwesomeIcon icon={faCalendarAlt} className={styles.calender} />
@@ -50,10 +50,10 @@ const Profile = () => {
       </div>
       <div className={styles.follow_container}>
         <p>
-          <span>98</span>Following
+          <span>98</span> Following
         </p>
         <p>
-          <span>4235</span>Followers
+          <span>4235</span> Followers
         </p>
       </div>
     </div>
