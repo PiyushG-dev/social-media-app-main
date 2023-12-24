@@ -30,19 +30,22 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <CreateHomePost />
-      {posts.map((post) => {
-        return (
-          <Post
-            key={post.id}
-            name={post.name}
-            profile={post.profilePicture}
-            username={post.username}
-            time={post.time}
-            image={post.selectedImage}
-            desc={post.desc}
-          />
-        );
-      })}
+      {posts
+        .slice()
+        .reverse()
+        .map((post) => {
+          return (
+            <Post
+              key={post.id}
+              name={post.name}
+              profile={post.profilePicture}
+              username={post.username}
+              time={post.time}
+              image={post.selectedImage}
+              desc={post.desc}
+            />
+          );
+        })}
     </div>
   );
 };

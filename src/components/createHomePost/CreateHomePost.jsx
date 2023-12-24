@@ -38,7 +38,9 @@ const CreateHomePost = () => {
 
   const handlePost = () => {
     if ((postDesc && selectedImage) || postDesc) {
-      dispatch(addPost(postDesc, selectedImage));
+      dispatch(
+        addPost({ description: postDesc, selectedImage: selectedImage })
+      );
     } else {
       alert("description missing");
     }
