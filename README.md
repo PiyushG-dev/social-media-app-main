@@ -4,11 +4,11 @@ SocialMediaApp is a modern and responsive social media application built with Re
 
 ## Features
 
-- **User Authentication**: Secure user authentication powered by Firebase Authentication.
+- **User Authentication**: Secure user authentication powered by appwrite Authentication.
 - **News Feed**: Scroll through a personalized news feed to stay updated on your friends' activities.
 - **Post Creation**: Create and share posts with text, images, and more.
 - **Comments and Likes**: Engage with friends' posts through comments and likes.
-- **Real-time Updates**: Experience real-time updates with the help of Firebase Realtime Database.
+- **Real-time Updates**: Experience real-time updates with the help of appwrite Realtime Database.
 - **Responsive Design**: Enjoy a seamless experience across various devices with a responsive design.
 
 ## Getting Started
