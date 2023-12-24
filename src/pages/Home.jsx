@@ -3,39 +3,43 @@ import styles from "./css/Home.module.css";
 import Post from "../components/post/Post";
 import CreateHomePost from "../components/createHomePost/CreateHomePost";
 import pf2 from "../images/pf2.jpg";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  const [posts, setPosts] = useState([]);
+  // const [posts, setPosts] = useState([]);
 
-  const addPost = (desc, selectedImage) => {
-    setPosts([
-      ...posts,
-      {
-        name: "Dennis Snellberg",
-        profilePicture: pf2,
-        username: "DennisSnellberg",
-        time: "5h",
-        uploadedImage: selectedImage
-          ? URL.createObjectURL(selectedImage)
-          : null,
-        desc: desc,
-      },
-    ]);
-  };
+  // const addPost = (desc, selectedImage) => {
+  //   setPosts([
+  //     ...posts,
+  //     {
+  //       name: "Dennis Snellberg",
+  //       profilePicture: pf2,
+  //       username: "DennisSnellberg",
+  //       time: "5h",
+  //       uploadedImage: selectedImage
+  //         ? URL.createObjectURL(selectedImage)
+  //         : null,
+  //       desc: desc,
+  //     },
+  //   ]);
+  // };
+
+  const posts = useSelector((state) => state.posts);
+  console.log(posts);
 
   return (
     <div className={styles.container}>
-      <CreateHomePost addPost={addPost} />
-      {posts.map((post, i) => {
+      <CreateHomePost />
+      {posts.map((post) => {
         return (
           <Post
+            key={post.id}
             name={post.name}
             profile={post.profilePicture}
             username={post.username}
             time={post.time}
-            image={post.uploadedImage}
+            image={post.selectedImage}
             desc={post.desc}
-            key={i}
           />
         );
       })}

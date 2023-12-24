@@ -11,10 +11,13 @@ import {
   faCalendarAlt,
   faLocationArrow,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { addPost } from "../../features/post/postSlice";
 
-const CreateHomePost = ({ addPost }) => {
+const CreateHomePost = () => {
   const [postDesc, setPostDesc] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
+  const dispatch = useDispatch();
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -35,7 +38,7 @@ const CreateHomePost = ({ addPost }) => {
 
   const handlePost = () => {
     if ((postDesc && selectedImage) || postDesc) {
-      addPost(postDesc, selectedImage);
+      dispatch(addPost(postDesc, selectedImage));
     } else {
       alert("description missing");
     }
