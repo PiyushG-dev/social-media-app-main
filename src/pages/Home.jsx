@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./css/Home.module.css";
 import Post from "../components/post/Post";
-import postsdummy from "../data/Posts";
 import CreateHomePost from "../components/createHomePost/CreateHomePost";
 import pf2 from "../images/pf2.jpg";
 
@@ -28,19 +27,6 @@ const Home = () => {
     <div className={styles.container}>
       <CreateHomePost addPost={addPost} />
       {posts.map((post, i) => {
-        return (
-          <Post
-            name={post.name}
-            profile={post.profilePicture}
-            username={post.username}
-            time={post.time}
-            image={post.uploadedImage}
-            desc={post.desc}
-            key={i}
-          />
-        );
-      })}
-      {postsdummy.map((post, i) => {
         return (
           <Post
             name={post.name}
