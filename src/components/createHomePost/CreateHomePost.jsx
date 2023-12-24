@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const CreateHomePost = ({ addPost }) => {
-  const [postText, setPostText] = useState("");
+  const [postDesc, setPostDesc] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (e) => {
@@ -34,13 +34,13 @@ const CreateHomePost = ({ addPost }) => {
   };
 
   const handlePost = () => {
-    if ((postText && selectedImage) || postText) {
-      addPost(postText, selectedImage);
+    if ((postDesc && selectedImage) || postDesc) {
+      addPost(postDesc, selectedImage);
     } else {
       alert("description missing");
     }
 
-    setPostText("");
+    setPostDesc("");
     setSelectedImage(null);
   };
 
@@ -54,8 +54,8 @@ const CreateHomePost = ({ addPost }) => {
           rows="2"
           cols="45"
           placeholder="What is happening?!"
-          value={postText}
-          onChange={(e) => setPostText(e.target.value)}
+          value={postDesc}
+          onChange={(e) => setPostDesc(e.target.value)}
         />
         <div className={styles.reply_option_container}>
           <FontAwesomeIcon className={styles.earth} icon={faEarth} />
