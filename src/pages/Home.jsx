@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <CreateHomePost />
-      {posts
+      {posts.posts
         .slice()
         .reverse()
         .map((post) => {
