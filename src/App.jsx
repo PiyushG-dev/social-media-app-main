@@ -9,27 +9,9 @@ import Premium from "./pages/Premium";
 import Profile from "./pages/Profile";
 import Trending from "./components/trending/Trending";
 import CreatePost from "./components/createPost/CreatePost";
-import { useDispatch } from "react-redux";
-import authService from "./appwrite/auth";
-import { login, logout } from "./features/auth/authSlice";
 
 const App = () => {
   const [createPost, setCreatePost] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    authService
-      .getCurrentUser()
-      .then((userData) => {
-        if (userData) {
-          dispatch(login({ userData }));
-        } else {
-          dispatch(logout());
-        }
-      })
-      .finally(() => setLoading(false));
-  }, []);
 
   return (
     <div className="App">
