@@ -1,0 +1,84 @@
+.container{
+    background: #000000;
+    display: flex;
+    height: 100vh;
+}
+
+.left_container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left_container img{
+    width: 20rem;
+}
+
+.right_container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.right_container h1{
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    margin-bottom: 2rem;
+}
+
+.right_container form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.right_container form input{
+    background-color: #acacac2d;
+    border: none;
+    width: 22em;
+    padding-left: 2rem;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    color: #ffffff;
+}
+
+.right_container form button{
+    color: #ffffff;
+    background:#1da1f2;
+    border: none;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    padding: .8rem 0rem;
+    width: 22rem;
+    cursor: pointer;
+}
+
+.right_container hr{
+    border: 1px solid #4c4c4cae;
+    width: 22rem;
+    margin-top: 1rem;
+}
+
+.signUp_navigate_container h4{
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.signUp_navigate_container button{
+    color: #1da1f2;
+    background:transparent;
+    border: 1px solid #ffffff8c;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    padding: .8rem 0rem;
+    margin-top: 1rem;
+    width: 22rem;
+    cursor: pointer;
+}

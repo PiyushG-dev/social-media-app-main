@@ -25,7 +25,6 @@ const Home = () => {
   // };
 
   const posts = useSelector((state) => state.posts);
-  console.log(posts);
 
   return (
     <div className={styles.container}>
