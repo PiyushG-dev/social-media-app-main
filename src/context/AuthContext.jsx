@@ -34,6 +34,13 @@ const AuthContextProvider = ({ children }) => {
   const registerUser = async (userInfo) => {};
 
   const checkUserStatus = async () => {
+    try {
+      let accountDetails = await account.get();
+      setUser(accountDetails);
+    } catch (err) {
+      console.error(err);
+    }
+
     setLoading(false);
   };
 
