@@ -4,11 +4,12 @@ import { Navigate, Outlet } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import Trending from "../components/trending/Trending";
 import CreatePost from "../components/createPost/CreatePost";
+import { useContext } from "react";
+import { AuthContext } from "../context/authContext";
 
 const PrivateRoutes = () => {
   const [createPost, setCreatePost] = useState(false);
-
-  const user = true;
+  const { user } = useContext(AuthContext);
 
   return (
     <>

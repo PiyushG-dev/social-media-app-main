@@ -64,6 +64,7 @@
     cursor: pointer;
 }
 
+
 @media(max-width: 1440px){
     .container{
         width: 25%;

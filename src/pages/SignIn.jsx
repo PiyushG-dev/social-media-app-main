@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./css/SignIn.module.css";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/authContext";
 
 const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { user, loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const userInfo = { email, password };
+
+    loginUser(userInfo);
+  };
 
   return (
     <div className={styles.container}>
@@ -14,9 +26,21 @@ const SignIn = () => {
       <div className={styles.right_container}>
         <h1>Sign into your account</h1>
         <form>
-          <input type="text" placeholder="email" />
-          <input type="password" placeholder="password" />
-          <button>Sign in</button>
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button onClick={handleSubmit}>Sign in</button>
         </form>
         <hr />
         <div className={styles.signUp_navigate_container}>

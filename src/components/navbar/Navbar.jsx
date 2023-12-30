@@ -10,8 +10,12 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 
 const Navbar = ({ createPost, setCreatePost }) => {
+  const { user, logoutUser } = useContext(AuthContext);
+
   return (
     <div className={styles.container}>
       <div className={styles.logo_container}>
@@ -43,6 +47,7 @@ const Navbar = ({ createPost, setCreatePost }) => {
       >
         Post
       </button>
+      <button onClick={logoutUser}>logout</button>
     </div>
   );
 };
