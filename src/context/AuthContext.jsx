@@ -26,7 +26,10 @@ const AuthContextProvider = ({ children }) => {
     setLoading(false);
   };
 
-  const logoutUser = async () => {};
+  const logoutUser = async () => {
+    await account.deleteSession("current");
+    setUser(null);
+  };
 
   const registerUser = async (userInfo) => {};
 
