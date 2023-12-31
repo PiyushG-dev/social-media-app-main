@@ -60,10 +60,21 @@
     border: none;
     border-radius: 1.5rem;
     font-size: 1.2rem;
-    padding: 1rem 6rem;
+    padding: 1rem 0rem;
+    width: 14rem;
     cursor: pointer;
 }
 
+.logout_btn{
+    color: #ffffff;
+    background:transparent;
+    border: 1px solid #70a9cc48;
+    border-radius: 1.5rem;
+    font-size: 1.2rem;
+    padding: 1rem 0rem;
+    width: 14rem;
+    cursor: pointer;
+}
 
 @media(max-width: 1440px){
     .container{

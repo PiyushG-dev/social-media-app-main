@@ -47,7 +47,9 @@ const Navbar = ({ createPost, setCreatePost }) => {
       >
         Post
       </button>
-      <button onClick={logoutUser}>logout</button>
+      <button onClick={logoutUser} className={styles.logout_btn}>
+        logout
+      </button>
     </div>
   );
 };
