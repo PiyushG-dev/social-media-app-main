@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { account } from "../appwrite/auth";
 import { useNavigate } from "react-router-dom";
+import { ID } from "appwrite";
 
 export const AuthContext = createContext();
 
@@ -35,7 +36,23 @@ const AuthContextProvider = ({ children }) => {
     setUser(null);
   };
 
-  const registerUser = async (userInfo) => {};
+  const registerUser = async (userInfo) => {
+    try {
+      let response = await account.create(
+        ID.unique(),
+        userInfo.email,
+        userInfo.password,
+        userInfo.name
+      );
+
+      await account.createEmailSession(userInfo.email, userInfo.password);
+      let accountDetails = await account.get();
+      setUser(accountDetails);
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const checkUserStatus = async () => {
     try {

@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./css/SignUp.module.css";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/authContext";
 
 const SignUp = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { user, registerUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const userInfo = { name, email, password };
+    registerUser(userInfo);
+  };
 
   return (
     <div className={styles.container}>
@@ -15,9 +28,28 @@ const SignUp = () => {
         <h1>Happening now</h1>
         <h3>Join today.</h3>
         <form>
-          <input type="text" placeholder="email" />
-          <input type="password" placeholder="password" />
-          <button>create account</button>
+          <input
+            type="text"
+            name="name"
+            placeholder="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button onClick={handleSubmit}>create account</button>
         </form>
         <hr />
         <div className={styles.signIn_navigate_container}>
