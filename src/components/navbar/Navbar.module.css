@@ -74,6 +74,11 @@
     padding: 1rem 0rem;
     width: 14rem;
     cursor: pointer;
+    transition: .2s all ease-in-out ;
+}
+
+.logout_btn:hover{
+    background-color: #70a9cc13;
 }
 
 @media(max-width: 1440px){
