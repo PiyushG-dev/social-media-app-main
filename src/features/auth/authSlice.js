@@ -14,11 +14,14 @@ const authSlice = createSlice({
   reducers: {
     loginUser: async (state, action) => {
       const { email, password } = action.payload;
+      const navigate = useNavigate();
       state.loading = true;
       try {
         const response = await account.createEmailSession(email, password);
         let accountDetails = await account.get();
         state.user = accountDetails;
+
+        navigate("/");
       } catch (error) {
         console.error(error);
       }
@@ -27,6 +30,25 @@ const authSlice = createSlice({
     logoutUser: async (state, action) => {
       await account.deleteSession("current");
       state.user = null;
+    },
+    registerUser: async (state, action) => {
+      const { name, email, password } = action.payload;
+      const navigate = useNavigate();
+      try {
+        const response = await account.create(
+          ID.unique(),
+          email,
+          password,
+          name
+        );
+        await account.createEmailSession(email, password);
+        let accountDetails = await account.get();
+        state.user = accountDetails;
+
+        navigate("/");
+      } catch (error) {
+        console.error(error);
+      }
     },
   },
 });
