@@ -50,7 +50,19 @@ const authSlice = createSlice({
         console.error(error);
       }
     },
+    checkUserStatus: async (state, action) => {
+      try {
+        let accountDetails = await account.get();
+        state.user = accountDetails;
+      } catch (error) {
+        console.error(error);
+      }
+      state.loading = false;
+    },
   },
 });
+
+export const { loginUser, logoutUser, registerUser, checkUserStatus } =
+  authSlice.actions;
 
 export default authSlice.reducer;
