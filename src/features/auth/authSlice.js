@@ -24,6 +24,10 @@ const authSlice = createSlice({
       }
       state.loading = false;
     },
+    logoutUser: async (state, action) => {
+      await account.deleteSession("current");
+      state.user = null;
+    },
   },
 });
 
