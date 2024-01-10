@@ -12,9 +12,12 @@ import {
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
+// import { useDispatch } from "react-redux";
+// import { logoutUser } from "../../features/auth/authSlice";
 
 const Navbar = ({ createPost, setCreatePost }) => {
   const { user, logoutUser } = useContext(AuthContext);
+  // const dispatch = useDispatch();
 
   return (
     <div className={styles.container}>

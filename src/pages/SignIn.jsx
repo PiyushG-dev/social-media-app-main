@@ -4,17 +4,19 @@ import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext";
+// import { useDispatch } from "react-redux";
+// import { loginUser } from "../features/auth/authSlice";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  // const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const userInfo = { email, password };
-
     loginUser(userInfo);
   };
 

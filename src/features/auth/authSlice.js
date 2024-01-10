@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { account } from "../../appwrite/auth";
-import { useNavigate } from "react-router-dom";
 import { ID } from "appwrite";
 
 const initialState = {
-  loading: true,
+  loading: false,
   user: null,
 };
 
@@ -14,14 +13,11 @@ const authSlice = createSlice({
   reducers: {
     loginUser: async (state, action) => {
       const { email, password } = action.payload;
-      const navigate = useNavigate();
       state.loading = true;
       try {
         const response = await account.createEmailSession(email, password);
         let accountDetails = await account.get();
         state.user = accountDetails;
-
-        navigate("/");
       } catch (error) {
         console.error(error);
       }
@@ -32,8 +28,7 @@ const authSlice = createSlice({
       state.user = null;
     },
     registerUser: async (state, action) => {
-      const { name, email, password } = action.payload;
-      const navigate = useNavigate();
+      const { email, password, name } = action.payload;
       try {
         const response = await account.create(
           ID.unique(),
@@ -44,8 +39,6 @@ const authSlice = createSlice({
         await account.createEmailSession(email, password);
         let accountDetails = await account.get();
         state.user = accountDetails;
-
-        navigate("/");
       } catch (error) {
         console.error(error);
       }

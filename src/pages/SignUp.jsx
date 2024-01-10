@@ -4,6 +4,8 @@ import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext";
+// import { useDispatch } from "react-redux";
+// import { registerUser } from "../features/auth/authSlice";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -11,6 +13,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const { user, registerUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  // const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();

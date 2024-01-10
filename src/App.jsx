@@ -10,6 +10,8 @@ import Premium from "./pages/Premium";
 import Profile from "./pages/Profile";
 import PrivateRoutes from "./utils/PrivateRoutes";
 import AuthContextProvider from "./context/authContext";
+// import { useDispatch, useSelector } from "react-redux";
+// import { checkUserStatus } from "./features/auth/authSlice";
 
 const App = () => {
   return (
