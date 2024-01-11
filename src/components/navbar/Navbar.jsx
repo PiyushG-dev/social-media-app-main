@@ -8,6 +8,7 @@ import {
   faSearch,
   faBell,
   faUser,
+  faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -51,6 +52,7 @@ const Navbar = ({ createPost, setCreatePost }) => {
         Post
       </button>
       <button onClick={logoutUser} className={styles.logout_btn}>
+        <FontAwesomeIcon icon={faArrowRightFromBracket} />
         logout
       </button>
     </div>
