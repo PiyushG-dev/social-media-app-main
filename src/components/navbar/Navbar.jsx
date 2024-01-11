@@ -16,8 +16,12 @@ import { AuthContext } from "../../context/authContext";
 // import { useDispatch } from "react-redux";
 // import { logoutUser } from "../../features/auth/authSlice";
 
-const Navbar = ({ createPost, setCreatePost }) => {
-  const { user, logoutUser } = useContext(AuthContext);
+const Navbar = ({
+  createPost,
+  setCreatePost,
+  logoutConfirm,
+  setLogoutConfirm,
+}) => {
   // const dispatch = useDispatch();
 
   return (
@@ -51,7 +55,10 @@ const Navbar = ({ createPost, setCreatePost }) => {
       >
         Post
       </button>
-      <button onClick={logoutUser} className={styles.logout_btn}>
+      <button
+        onClick={() => setLogoutConfirm(!logoutConfirm)}
+        className={styles.logout_btn}
+      >
         <FontAwesomeIcon icon={faArrowRightFromBracket} />
         logout
       </button>
