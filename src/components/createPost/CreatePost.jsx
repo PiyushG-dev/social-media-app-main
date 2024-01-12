@@ -15,11 +15,26 @@ import {
 import prof from "../../images/pf2.jpg";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../features/post/postSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CreatePost = ({ createPost, setCreatePost }) => {
   const [postDesc, setPostDesc] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
   const dispatch = useDispatch();
+
+  const notify = () => {
+    toast("Posted!", {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -50,6 +65,7 @@ const CreatePost = ({ createPost, setCreatePost }) => {
     setPostDesc("");
     setSelectedImage(null);
     setCreatePost(!createPost);
+    notify();
   };
   return (
     <section
@@ -104,6 +120,7 @@ const CreatePost = ({ createPost, setCreatePost }) => {
           </button>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };
