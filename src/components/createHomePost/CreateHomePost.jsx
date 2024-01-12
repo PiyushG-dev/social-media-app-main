@@ -13,11 +13,26 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../features/post/postSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CreateHomePost = () => {
   const [postDesc, setPostDesc] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
   const dispatch = useDispatch();
+
+  const notify = () => {
+    toast("Posted!", {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -47,6 +62,7 @@ const CreateHomePost = () => {
 
     setPostDesc("");
     setSelectedImage(null);
+    notify();
   };
 
   return (
@@ -91,6 +107,18 @@ const CreateHomePost = () => {
           </button>
         </div>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };
