@@ -74,12 +74,15 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const logoutUser = async () => {
+    setLoading(true);
     await account.deleteSession("current");
     setUser(null);
     notifyLogout();
+    setLoading(false);
   };
 
   const registerUser = async (userInfo) => {
+    setLoading(true);
     try {
       let response = await account.create(
         ID.unique(),
@@ -96,6 +99,7 @@ const AuthContextProvider = ({ children }) => {
     } catch (error) {
       console.error(error);
     }
+    setLoading(false);
   };
 
   const checkUserStatus = async () => {
