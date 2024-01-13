@@ -37,6 +37,19 @@ const AuthContextProvider = ({ children }) => {
     });
   };
 
+  const notifyRegister = () => {
+    toast.success("Welcome to X!", {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
   useEffect(() => {
     checkUserStatus();
   }, []);
@@ -78,6 +91,7 @@ const AuthContextProvider = ({ children }) => {
       let accountDetails = await account.get();
       setUser(accountDetails);
       navigate("/");
+      notifyRegister();
     } catch (error) {
       console.error(error);
     }

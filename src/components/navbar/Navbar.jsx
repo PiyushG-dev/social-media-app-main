@@ -11,8 +11,6 @@ import {
   faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../context/authContext";
 // import { useDispatch } from "react-redux";
 // import { logoutUser } from "../../features/auth/authSlice";
 
