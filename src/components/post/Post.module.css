@@ -9,6 +9,7 @@
     display: flex;
     align-items: flex-start;
     gap: 1vmax;
+    position: relative;
 }
 
 .profile img{
@@ -54,6 +55,28 @@
 .post_menu{
     cursor: pointer;
 }
+
+.dropdown{
+    display: block;
+    width: 12rem;
+    position: absolute;
+    right: 0rem;
+    background-color: #000000;
+    border-radius: 1rem;
+    box-shadow: rgba(242, 242, 242, 0.473) 0px 2px 8px 0px;
+    z-index: 1;
+  }
+  
+  .dropdown p {
+    color: #ffffff;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  .dropdown p:hover {
+    background-color: #d9d9d91f;
+  }
 
 .post_description{
     color: #ffffff;

@@ -13,6 +13,7 @@ import {
 
 const Post = ({ name, profile, username, time, image, desc }) => {
   const [like, setLike] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
   return (
     <div className={styles.wrapper}>
@@ -28,7 +29,20 @@ const Post = ({ name, profile, username, time, image, desc }) => {
               <p> &middot; {time}</p>
             </div>
             <div className={styles.right}>
-              <FontAwesomeIcon className={styles.post_menu} icon={faEllipsis} />
+              <FontAwesomeIcon
+                className={styles.post_menu}
+                onClick={() => setDropdown(!dropdown)}
+                icon={faEllipsis}
+              />
+              {dropdown && (
+                <div className={styles.dropdown}>
+                  <p>Not interested</p>
+                  <p>Delete post</p>
+                  <p>report</p>
+                  <p>mute</p>
+                  <p>View post</p>
+                </div>
+              )}
             </div>
           </div>
           <p className={styles.post_description}>{desc}</p>

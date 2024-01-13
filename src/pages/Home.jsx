@@ -24,12 +24,12 @@ const Home = () => {
   //   ]);
   // };
 
-  const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts.posts);
 
   return (
     <div className={styles.container}>
       <CreateHomePost />
-      {posts.posts
+      {posts
         .slice()
         .reverse()
         .map((post) => {
