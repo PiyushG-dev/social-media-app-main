@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { account } from "../appwrite/auth";
 import { useNavigate } from "react-router-dom";
 import { ID } from "appwrite";
+import Loader from "../components/loader/Loader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -116,7 +117,7 @@ const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={contextValue}>
-      {loading ? <p>loading...</p> : children}
+      {loading ? <Loader /> : children}
       <ToastContainer
         position="top-center"
         autoClose={1000}
