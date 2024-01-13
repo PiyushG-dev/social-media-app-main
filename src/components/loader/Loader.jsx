@@ -8,7 +8,6 @@ const Loader = () => {
       <div className={styles.loader}>
         <ClipLoader color="#1da1f2" size={50} margin={4} />
       </div>
-      <p>hey</p>
     </section>
   );
 };
