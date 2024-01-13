@@ -24,6 +24,18 @@ const AuthContextProvider = ({ children }) => {
       theme: "dark",
     });
   };
+  const notifyLogout = () => {
+    toast.success("logged out!", {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
 
   useEffect(() => {
     checkUserStatus();
@@ -50,6 +62,7 @@ const AuthContextProvider = ({ children }) => {
   const logoutUser = async () => {
     await account.deleteSession("current");
     setUser(null);
+    notifyLogout();
   };
 
   const registerUser = async (userInfo) => {
