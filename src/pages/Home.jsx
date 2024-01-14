@@ -3,7 +3,8 @@ import styles from "./css/Home.module.css";
 import Post from "../components/post/Post";
 import CreateHomePost from "../components/createHomePost/CreateHomePost";
 import pf2 from "../images/pf2.jpg";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deletePost } from "../features/post/postSlice";
 
 const Home = () => {
   // const [posts, setPosts] = useState([]);
@@ -23,7 +24,7 @@ const Home = () => {
   //     },
   //   ]);
   // };
-
+  const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
 
   return (
@@ -36,6 +37,7 @@ const Home = () => {
           return (
             <Post
               key={post.id}
+              deletePost={() => dispatch(deletePost(post.id))}
               name={post.name}
               profile={post.profilePicture}
               username={post.username}

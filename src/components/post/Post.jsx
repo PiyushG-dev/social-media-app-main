@@ -11,7 +11,7 @@ import {
   faArrowUpFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Post = ({ name, profile, username, time, image, desc }) => {
+const Post = ({ name, profile, username, time, image, desc, deletePost }) => {
   const [like, setLike] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
@@ -37,7 +37,7 @@ const Post = ({ name, profile, username, time, image, desc }) => {
               {dropdown && (
                 <div className={styles.dropdown}>
                   <p>Not interested</p>
-                  <p>Delete post</p>
+                  <p onClick={deletePost}>Delete post</p>
                   <p>report</p>
                   <p>mute</p>
                   <p>View post</p>
