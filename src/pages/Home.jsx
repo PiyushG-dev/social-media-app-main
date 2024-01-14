@@ -5,6 +5,8 @@ import CreateHomePost from "../components/createHomePost/CreateHomePost";
 import pf2 from "../images/pf2.jpg";
 import { useSelector, useDispatch } from "react-redux";
 import { deletePost } from "../features/post/postSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   // const [posts, setPosts] = useState([]);
@@ -27,6 +29,24 @@ const Home = () => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
 
+  const notify = () => {
+    toast("Post deleted!", {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  const handleDelete = (id) => {
+    dispatch(deletePost(id));
+    notify();
+  };
+
   return (
     <div className={styles.container}>
       <CreateHomePost />
@@ -37,7 +57,7 @@ const Home = () => {
           return (
             <Post
               key={post.id}
-              deletePost={() => dispatch(deletePost(post.id))}
+              deletePost={() => handleDelete(post.id)}
               name={post.name}
               profile={post.profilePicture}
               username={post.username}
@@ -47,6 +67,18 @@ const Home = () => {
             />
           );
         })}
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };
